@@ -1,0 +1,2 @@
+# do not push the downloaded models
+*.pt
