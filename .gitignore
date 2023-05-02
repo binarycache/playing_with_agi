@@ -1,2 +1,26 @@
 # do not push the downloaded models
 *.pt
+
+# do not push .env file
+.env
+
+# do not push .DS_Store file
+.DS_Store
+
+# do not push .ipynb_checkpoints file
+.ipynb_checkpoints
+
+# do not push __pycache__ file
+__pycache__
+
+# do not push model weights
+*.pth
+
+# do not push models 
+*.pt
+
+# do not push database
+*.db
+
+# do not push vector store
+*.faiss
