@@ -81,7 +81,7 @@ def generate_diet_plan(user_input):
         f"- Meal plan preference: {user_input['meal_plan_preference']}\n"
         f"- Favorite ingredients: {user_input['favorite_ingredients']}\n"
         f"- Least favorite ingredients: {user_input['least_favorite_ingredients']}\n\n"
-        "Please provide a 1-day diet plan with meal and snack suggestions."
+        "Please provide a 7-day diet plan with meal and snack suggestions."
     )
 
     response = openai.Completion.create(
@@ -96,22 +96,6 @@ def generate_diet_plan(user_input):
     diet_plan = response.choices[0].text.strip()
     return diet_plan
 
-# def store_diet_plan_to_vector_db(user_diet_plan):
-#     username, diet_plan = user_diet_plan
-
-#     # Convert the diet plan text into a vector using the OpenAI API
-#     response = openai.Embedding.create(
-#         model="text-embedding-ada-002",
-#         input=diet_plan
-#         )
-
-#     # Extract the embeddings from the response
-#     embeddings = response['data'][0]['embedding']
-#     vector = np.array(embeddings, dtype=np.float32).reshape(1, -1)
-
-#      # Save the Faiss index to disk
-#     faiss_helper = FaissHelper(dim=vector.shape[1])
-#     faiss_helper.store_vector(username, vector)
 
 def store_diet_plan_to_vector_db(user_diet_plan):
     # Convert the diet plan text into a vector using the OpenAI API

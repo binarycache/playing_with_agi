@@ -35,7 +35,7 @@ def main():
                 elif user_db.user_exists(new_username):
                     st.error("Username already exists")
                 else:
-                    user_db.add_user(new_username, new_password, diet_plan=None)
+                    user_db.add_user(new_username, new_password)
                     st.success("User registered successfully!")
 
     else:
